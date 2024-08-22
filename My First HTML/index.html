@@ -1,7 +1,7 @@
 <!--
     Author(a): Kelly Daniella Marin Montealegre
     Date of the creation: 15/08/2024
-    Last Modification: 15/08/2024 | 10:00am
+    Last Modification: 22/08/2024 | 11:39am
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +13,13 @@
     <link type="image/png" sizes="32x32" rel="icon" href="./src/img/icons8-estrella-32.png">
     <link rel="stylesheet" href="./src/css/main.css">
     <script>
-        alert("Hello World!");
+        function showDate() {
+            document.getElementById('demo').innerHTML = Date();
+            alert("Soy Kelly Marin");
+        }
     </script>
 </head>
-<body>
+<body onload="showDate()">
     <h1>Hello World!</h1>
     <h2>Hello World!</h2>
     <h3>Hello World!</h3>
@@ -34,5 +37,8 @@
 
     <img id="myImageSVG" name="myImageSVG" src="./src/svg/papas-fritas.svg" alt="Papas Fritas">
     
+    <br>
+    <button type="button" onclick="showDate()">Soy un boton</button>
+    <p id="demo">Aqui mostrarè Fecha...</p>
 </body>
 </html>
