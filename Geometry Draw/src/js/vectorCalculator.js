@@ -8,7 +8,10 @@ function vector() {
     let by = document.getElementById("puntoBY").value;
     let bz = document.getElementById("puntoBZ").value;
 
-    alert("("+ax+","+ay+","+az+")");
-    alert("("+bx+","+by+","+bz+")");
-
+    let vx = bx-ax,
+        vy = by-ay,
+        vz = bz-az;
+    
+    let vectorFinal = `(${vx},${vy},${vz})`;   
+    document.getElementById("result").innerHTML = vectorFinal;
 }
