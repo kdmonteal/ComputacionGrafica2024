@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(226, 226, 226) !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    flex: 1;
+}
+
+canvas {
+    width: 100%;
+}
+
