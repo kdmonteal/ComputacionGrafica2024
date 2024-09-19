@@ -20,7 +20,7 @@ function startScene() {
  
     //orbit controls
     controls = new THREE.OrbitControls(camera, renderer.domElement);
-    camera.position.set(0, 0, 0);
+    camera.position.set(0, 5, 10);
     controls.update();
 
     //orbit helper
@@ -66,8 +66,8 @@ function createGeometry(geometryDraw) {
             geometryFigure = new THREE.ConeGeometry( 5, 20, 32 );
           break;
     }
-
-    const material = new THREE.MeshBasicMaterial( { color: "#c39d12" } );
+    var randomColor = +('0x' + Math.floor(Math.random()*16777215).toString(16));
+    const material = new THREE.MeshBasicMaterial( { color: randomColor } );
     const objectDraw = new THREE.Mesh( geometryFigure, material );
     scene.add( objectDraw );
 }
