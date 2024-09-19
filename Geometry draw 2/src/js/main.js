@@ -32,7 +32,7 @@ function startScene() {
 
     // Luz - Light
     // Ambient Light
-    const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+    const light = new THREE.AmbientLight( 0xffffff ); // soft white light
     scene.add( light );
 
     // Point Light
@@ -77,7 +77,7 @@ function createGeometry(geometryDraw) {
           break;
         case 'Cone':
           // code block
-            geometryFigure = new THREE.ConeGeometry( 5, 20, 32 );
+            geometryFigure = new THREE.ConeGeometry( 5, 10, 32 );
           break;
     }
     var randomColor = +('0x' + Math.floor(Math.random()*16777215).toString(16));
