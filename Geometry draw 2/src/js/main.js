@@ -26,12 +26,6 @@ function startScene() {
     //orbit helper
     const gridHelper = new THREE.GridHelper( size, division );
     scene.add( gridHelper );
-
-    createGeometry('Box');
-    // const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    // const material = new THREE.MeshBasicMaterial( { color: "#c39d12" } );
-    // const cube = new THREE.Mesh( geometry, material );
-    // scene.add( cube );
  
     camera.position.z = 5;
     animate();
@@ -56,19 +50,24 @@ function onWindowResize(){
  
 function createGeometry(geometryDraw) {
     // Box, Torus, Cone
+    var geometryFigure = null;
 
     switch(geometryDraw) {
         case 'Box':
           // code block
-          alert('Box');
+            geometryFigure = new THREE.BoxGeometry( 1, 1, 1 );
           break;
         case 'Torus':
           // code block
-          alert('Torus');
+            geometryFigure = new THREE.TorusGeometry( 10, 1, 16, 100 ); 
           break;
         case 'Cone':
           // code block
-          alert('Cone');
+            geometryFigure = new THREE.ConeGeometry( 5, 20, 32 );
           break;
     }
+
+    const material = new THREE.MeshBasicMaterial( { color: "#c39d12" } );
+    const objectDraw = new THREE.Mesh( geometryFigure, material );
+    scene.add( objectDraw );
 }

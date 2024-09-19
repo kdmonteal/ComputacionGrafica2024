@@ -18,6 +18,27 @@
 <body onload="startScene()">
 
     <div id="canvas-container">
+
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <div style="z-index: 9;">
+
+                    <div class="container text-center">
+                        <div class="row">
+                          <div class="col-4">
+                            <button class="btn btn-secondary" onclick="createGeometry('Torus')">Torus</button>
+                          </div>
+                          <div class="col-4">
+                            <button class="btn btn-secondary" onclick="createGeometry('Cone')">Cone</button>
+                          </div>
+                          <div class="col-4">
+                            <button class="btn btn-secondary" onclick="createGeometry('Box')">Box</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+          </nav>
         <canvas id="app"></canvas>
     </div>
 
