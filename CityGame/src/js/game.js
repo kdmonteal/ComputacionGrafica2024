@@ -8,7 +8,11 @@ function createUI() {
     };
 
     var g = gui.addFolder('Geometria');
-        g.add(param, 'a', ["Mujer", "Hombre", "Luigi", "Mario", "Ronin"]).name("Modelos 3D");
+    var player = g.add(param, 'a', ["Mujer", "Hombre", "Luigi", "Mario", "Ronin"]).name("Modelos 3D");
+
+    player.onChange(function(myPlayer) {
+        console.log(myPlayer);
+    });
 
     var l = gui.addFolder('Luces');
     var colorLight = l.addColor(param, 'b').name("Color de Luz");
@@ -24,3 +28,23 @@ function createUI() {
     });
 }
 
+function loadObjMtl() {
+    // general Path, nameObj, nameMTL
+    var generalPath = "./src/models/obj/myPlayer/";
+    var fileObj = "ronin-1.obj";
+    var fileMtl = "ronin-1.mtl";
+
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setTexturePath(generalPath);
+    mtlLoader.setPath(generalPath);
+    mtlLoader.load(fileMtl, function(materials) {
+        materials.preload();
+
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.setPath(generalPath);
+        objLoader.load(fileObj, function(object) {
+            scene.add(object);
+        });
+    });
+}
