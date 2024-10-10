@@ -12,6 +12,7 @@ function createUI() {
 
     player.onChange(function(myPlayer) {
         console.log(myPlayer);
+        //loadObjMtl();
     });
 
     var l = gui.addFolder('Luces');
@@ -45,6 +46,9 @@ function loadObjMtl() {
             objLoader.setPath(generalPath);
             objLoader.load(fileObj, function(object) {
                 scene.add(object);
+                object.scale.set(0.2,0.2,0.2);
+                object.position.set(-1.2,0,-4);
+
             });
         });
 }
