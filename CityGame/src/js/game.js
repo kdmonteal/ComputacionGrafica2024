@@ -35,16 +35,16 @@ function loadObjMtl() {
     var fileMtl = "ronin-1.mtl";
 
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setTexturePath(generalPath);
-    mtlLoader.setPath(generalPath);
-    mtlLoader.load(fileMtl, function(materials) {
-        materials.preload();
+        mtlLoader.setTexturePath(generalPath);
+        mtlLoader.setPath(generalPath);
+        mtlLoader.load(fileMtl, function(materials) {
+            materials.preload();
 
-        var objLoader = new THREE.OBJLoader();
-        objLoader.setMaterials(materials);
-        objLoader.setPath(generalPath);
-        objLoader.load(fileObj, function(object) {
-            scene.add(object);
+            var objLoader = new THREE.OBJLoader();
+            objLoader.setMaterials(materials);
+            objLoader.setPath(generalPath);
+            objLoader.load(fileObj, function(object) {
+                scene.add(object);
+            });
         });
-    });
 }
