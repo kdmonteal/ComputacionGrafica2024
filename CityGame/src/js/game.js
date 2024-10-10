@@ -18,5 +18,9 @@ function createUI() {
         console.log(colorGet);
         light.color.setHex(Number(colorGet.toString().replace('#','0x')));
     });
+
+    intensityLight.onChange(function(intensityGet) {
+        light.intensity = intensityGet;
+    });
 }
 
