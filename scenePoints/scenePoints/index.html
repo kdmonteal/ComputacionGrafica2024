@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first three.js app</title>
+    <link rel="icon" href="./src/img/myIcon.png">
+
+    <!-- All CSS -->
+    <link rel="stylesheet" href="./src/css/style.css">
+
+    <!-- Basic libraries -->
+    <script src="./src/libs/three.js"></script>
+    <script src="./src/libs/three.js-master/build/three.min.js"></script>
+    <script src="./src/libs/three.js-master/build/three.js"></script>
+
+    <!-- Llamar a todas las librerias de GUI-->
+    <script src="./src/libs/DAT.GUI.min.js"></script>
+
+    <script src="./src/libs/Stats.js"></script>
+
+    <!-- Load files from LOAD -->
+    <script src="./src/libs/load/DRACOLoader.js"></script>
+    <script src="./src/libs/load/GLTFLoader.js"></script>
+    <script src="./src/libs/load/MTLLoader.js"></script>
+    <script src="./src/libs/load/OBJLoader.js"></script>
+
+    <!-- Load Collider Content -->
+    <script src="./src/libs/collider/better.js"></script>
+    <script src="./src/libs/collider/threex.collider.js"></script>
+    <script src="./src/libs/collider/threex.colliderhelper.js"></script>
+    <script src="./src/libs/collider/threex.collidersystem.js"></script>
+
+    <!-- Load Movement Code and Sound Library-->
+    <script src="./src/libs/mov/FPSControls.js"></script>
+    <script src="./src/libs/mov/pointerlock.js"></script>
+    <script src="./src/libs/Sound.js"></script>
+
+    <script src="./src/libs/OrbitControls.js"></script>
+    <script src="./src/js/main.js"></script>
+
+</head>
+
+<body onload="startScene()">
+    <!-- <audio controls>
+        <source src="./src/songs/rain.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <audio id="bckSound" src="./src/songs/backgroundSound.mp3"></audio>
+
+    <canvas id="app"></canvas> <!-- Se representa todo lo correspondiente con THREE JS-->
+    <div id="container"></div>
+
+    <!--Panel Start Game-->
+    <div id="menuPanel">
+        <div id="instructions">
+            <span onclick="goToPlay()" style="font-size:36px">Click to play</span>
+            <br /><br />
+            Move: WASD<br/>
+            Jump: SPACE<br/>
+            Look: MOUSE
+        </div>    
+    </div>
+
+    <!-- Canvas Points -->
+    <div id="PanelPoints">
+        <span>Points: </span>
+        <span id="points">0</span>
+    </div>
+
+    <!--Panel Win-->
+    <div id="WinPanel" style="display: none;"></div>
+
+    <!--Panel Lost-->
+    <div id="LostPanel" style="display: none;"></div>
+</body>
+</html>
